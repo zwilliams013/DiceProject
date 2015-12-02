@@ -88,7 +88,7 @@ int main() {
 	cout << endl;
 
 	numDie = 2;													//change number of die to 2 
-    dieOutcome.resize(6 * numDie);								//resize vector
+    	dieOutcome.resize(6 * numDie);								//resize vector
 		
 	for (i = 0; i < 6 * numDie; ++i) {                          //making all vector values 0 to start with
 		dieOutcome.at(i) = 0;
