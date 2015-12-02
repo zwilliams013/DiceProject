@@ -24,32 +24,32 @@ int main() {
 	int numDie = 0;
 	vector<int> dieOutcome(1);
 
-	Die die1;													//die object 
+	Die die1;										//die object 
 
 	cout << "Please enter a seed: ";							//ask user for seed
 	cin >> seed;
 	srand(seed);
 
-	numDie = 1;													//rolling 1 dice
+	numDie = 1;										//rolling 1 dice
 
-	cout << "How many rolls? ";						//ask user for number of rolls
+	cout << "How many rolls? ";								//ask user for number of rolls
 	cin >> dieRolls;
 	cout << endl;
 
 	dieOutcome.resize(6 * numDie);								//resize vector to fit die vals
 
-	for (i = 0; i < 6 * numDie; ++i) {                         //making all vector values 0 to start with
+	for (i = 0; i < 6 * numDie; ++i) {                      				//making all vector values 0 to start with
 		dieOutcome.at(i) = 0;
 	}
 
 	for (i = 0; i < dieRolls; ++i) {
-		int tally = 0;										   //resetting tally to 0 after every iteration
+		int tally = 0;									//resetting tally to 0 after every iteration
 
-		for (j = 0; j < numDie; ++j) {						   //rolls numDie times and adds them together
+		for (j = 0; j < numDie; ++j) {						   	//rolls numDie times and adds them together
 			tally += die1.RollDie();
 		}
 
-		dieOutcome.at(tally - 1)++;                              //subtract 1 from tally, tally goes from 1-6, array is from 0-5
+		dieOutcome.at(tally - 1)++;                             			 //subtract 1 from tally, tally goes from 1-6, array is from 0-5
 	}
 
 	for (i = 0; i < 6 * numDie; ++i) {													//output values of array
@@ -66,7 +66,7 @@ int main() {
 		}
 	}
 
-	int scale =  dieOutcome.at(maxOccurance) / 60 + 1;							//find scale by dividing highest num by 60, adding 1 to round up
+	int scale =  dieOutcome.at(maxOccurance) / 60 + 1;					//find scale by dividing highest num by 60, adding 1 to round up
 
 	//Print out histogram
 	for (i = 0; i < dieOutcomeSize; ++i) {
@@ -87,10 +87,10 @@ int main() {
 	cout << "Rolling twice: " << endl;
 	cout << endl;
 
-	numDie = 2;													//change number of die to 2 
+	numDie = 2;										//change number of die to 2 
     	dieOutcome.resize(6 * numDie);								//resize vector
 		
-	for (i = 0; i < 6 * numDie; ++i) {                          //making all vector values 0 to start with
+	for (i = 0; i < 6 * numDie; ++i) {                          				//making all vector values 0 to start with
 		dieOutcome.at(i) = 0;
 	}
 	
@@ -101,7 +101,7 @@ int main() {
 			tally += die1.RollDie();
 		}
 
-		dieOutcome.at(tally - 1)++;                             //subtract 1 from tally, tally goes from 1- 12, array is from 0-11
+		dieOutcome.at(tally - 1)++;                             			//subtract 1 from tally, tally goes from 1- 12, array is from 0-11
 	}
 
 	for (i = 1; i < 6 * numDie; ++i) {
@@ -118,7 +118,7 @@ int main() {
 		}
 	}
 
-	scale = dieOutcome.at(maxOccurance) / 60 + 1;										//update scale
+	scale = dieOutcome.at(maxOccurance) / 60 + 1;						//update scale
 	
 	for (int i = 1; i < dieOutcomeSize; ++i) {
 		cout << setw(3) << i + 1 << " ";
